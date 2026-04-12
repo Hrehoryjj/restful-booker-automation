@@ -24,7 +24,7 @@ public class BaseApiClient {
                 .header("Content-Type", "application/json")
                 .pathParam("id", id)
                 .when()
-                .get(endpoint + "{id}");
+                .get(endpoint + "/{id}");
     }
 
     public Response Get(String endpoint, String firstname, String lastname){
@@ -35,7 +35,7 @@ public class BaseApiClient {
                 .when()
                 .get(endpoint);
     }
-    public Response Put(String endpoint,int id,String token, Object body){
+    public Response Put(String endpoint,int id, Object body,String token){
         return given()
                 .header("Content-Type", "application/json")
                 .header("Accept", "application/json")
@@ -44,6 +44,33 @@ public class BaseApiClient {
                 .pathParam("id", id)
                 .when()
                 .put(endpoint + "{id}");
+    }
+    public Response Patch(String endpoint,int id, Object body,String token){
+        return given()
+                .header("Content-Type", "application/json")
+                .header("Accept", "application/json")
+                .header("Cookie", "token=" + token)
+                .body(body)
+                .pathParam("id", id)
+                .when()
+                .patch(endpoint + "{id}");
+    }
+    public Response Delete(String endpoint, int id, String token){
+        return given()
+                .header("Content-Type", "application/json")
+                .header("Accept", "application/json")
+                .header("Cookie", "token=" + token)
+                .pathParam("id", id)
+                .when()
+                .delete(endpoint + "{id}");
+    }
+    public Response Delete(String endpoint, String token){
+        return given()
+                .header("Content-Type", "application/json")
+                .header("Accept", "application/json")
+                .header("Cookie", "token=" + token)
+                .when()
+                .delete(endpoint);
     }
 
 

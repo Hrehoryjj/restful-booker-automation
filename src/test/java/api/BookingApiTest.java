@@ -23,7 +23,7 @@ public class BookingApiTest extends BaseApiTest {
         BookingDates dates = new BookingDates("2026-10-10", "2026-10-17");
         Booking payload = new Booking("Gregory", "Test", 250, true, dates, "Breakfast");
         Response response = apiClient.Post(BookingEndpoints.CREATE_BOOKING, payload);
-        //response.prettyPrint();
+        response.prettyPrint();
         createBookingId = response.then().extract().path("bookingid");
 
         response.then()
@@ -58,7 +58,7 @@ public class BookingApiTest extends BaseApiTest {
 
     @Test
     public void tc04_createBookingWithInvalidCheckoutDate(){
-        BookingDates dates = new BookingDates("2026-10-10", "2026-10-17");
+        BookingDates dates = new BookingDates("2026-10-10", "2026-09-17");
         Booking payload = new Booking("Gregory", "Test", 250, true, dates, "Breakfast");
         Response response = apiClient.Post(BookingEndpoints.CREATE_BOOKING, payload);
 
@@ -163,7 +163,9 @@ public class BookingApiTest extends BaseApiTest {
         String token = getAuthToken();
         BookingDates dates = new BookingDates("2026-11-11", "2026-11-17");
         Booking payload = new Booking("Sasha", "Brown", 150, false, dates, "none");
-        Response response = apiClient.Put(BookingEndpoints.UPDATE_BOOKING, createBookingId, token, payload);
+
+        Response response = apiClient.Put(BookingEndpoints.UPDATE_BOOKING, createBookingId, payload, token);
+        response.prettyPrint();
         response.then()
                 .log().ifValidationFails()
                 .statusCode(200)
@@ -172,31 +174,64 @@ public class BookingApiTest extends BaseApiTest {
 
     @Test
     public void tc14_updateBookingAdditionalInfoOnly() {
+        String token = getAuthToken();
+        Map<String, Object> updateBody = new HashMap<>();
+        updateBody.put("additionalneeds", "wheelchair");
+
+        Response response = apiClient.Patch(BookingEndpoints.UPDATE_BOOKING, createBookingId, updateBody, token);
+        response.then()
+                .log().ifValidationFails()
+                .statusCode(200)
+                .body(notNullValue());
     }
 
     @Test
     public void tc15_updateBookingToEmptyValues() {
+        String token = getAuthToken();
+        BookingDates dates = new BookingDates(" ", " ");
+        Booking payload = new Booking(" ", " ",0, false,dates , " ");
+
+        Response response = apiClient.Put(BookingEndpoints.UPDATE_BOOKING, createBookingId, payload, token);
+        response.then()
+                .log().ifValidationFails()
+                .statusCode(404)
+                .body(notNullValue());
+
     }
 
     @Test
     public void tc16_updateBookingWithInvalidDates() {
+        String token = getAuthToken();
+        Map<String, String> datesMap = new HashMap<>();
+        datesMap.put("checkin", "2026-10-10");
+        datesMap.put("checkout", "2026-10-10");
+
+        Map<String, Object> patchBody = new HashMap<>();
+        patchBody.put("bookingdates", datesMap);
+
+        Response response = apiClient.Patch(BookingEndpoints.UPDATE_BOOKING, createBookingId, patchBody, token);
+        response.then()
+                .log().ifValidationFails()
+                .statusCode(404)
+                .body(notNullValue());
+
     }
 
     @Test
     public void tc17_deleteBookingSuccess() {
+        String token = getAuthToken();
+        Response response = apiClient.Delete(BookingEndpoints.DELETE_BOOKING, createBookingId, token);
+        response.then()
+                .log().ifValidationFails()
+                .statusCode(201);
     }
 
     @Test
     public void tc18_deleteBookingWithoutId() {
+        String token = getAuthToken();
+        Response response = apiClient.Delete(BookingEndpoints.DELETE_BOOKING, token);
+        response.then()
+                .log().ifValidationFails()
+                .statusCode(404);
     }
-
-    @Test
-    public void tc19_loginWithValidCredentials() {
-    }
-
-    @Test
-    public void tc20_loginWithInvalidPassword() {
-    }
-
-
 }
