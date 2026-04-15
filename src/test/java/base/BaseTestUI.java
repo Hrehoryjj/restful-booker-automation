@@ -6,6 +6,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import java.time.Duration;
+
 public class BaseTestUI {
 
     protected WebDriver driver;
@@ -15,6 +17,7 @@ public class BaseTestUI {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.get("https://automationintesting.online/");
     }
 
     @AfterMethod
