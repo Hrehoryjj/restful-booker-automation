@@ -24,10 +24,10 @@ public class BookingUiTest extends BaseTestUI {
 
         WebElement checkin = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[1]")));
         checkin.click();
-        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/10/2028", Keys.ESCAPE);
+        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/10/2027", Keys.ESCAPE);
 
         WebElement checkout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[2]")));
-        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/10/2028", Keys.ESCAPE);
+        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/10/2027", Keys.ESCAPE);
 
 
         driver.findElement(By.xpath("//button[text()='Check Availability']")).click();
@@ -50,10 +50,10 @@ public class BookingUiTest extends BaseTestUI {
 
         WebElement checkin = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[1]")));
         checkin.click();
-        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/11/2028", Keys.ESCAPE);
+        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/11/2027", Keys.ESCAPE);
 
         WebElement checkout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[2]")));
-        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/11/2028", Keys.ESCAPE);
+        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/11/2027", Keys.ESCAPE);
 
 
         driver.findElement(By.xpath("//button[text()='Check Availability']")).click();
@@ -75,10 +75,10 @@ public class BookingUiTest extends BaseTestUI {
 
         WebElement checkin = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[1]")));
         checkin.click();
-        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/12/2028", Keys.ESCAPE);
+        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/10/2027", Keys.ESCAPE);
 
         WebElement checkout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[2]")));
-        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/12/2028", Keys.ESCAPE);
+        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/10/2027", Keys.ESCAPE);
 
 
         driver.findElement(By.xpath("//button[text()='Check Availability']")).click();
@@ -100,10 +100,10 @@ public class BookingUiTest extends BaseTestUI {
 
         WebElement checkin = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[1]")));
         checkin.click();
-        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/10/2028", Keys.ESCAPE);
+        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/12/2027", Keys.ESCAPE);
 
         WebElement checkout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[2]")));
-        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/10/2028", Keys.ESCAPE);
+        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/12/2027", Keys.ESCAPE);
 
 
         driver.findElement(By.xpath("//button[text()='Check Availability']")).click();
@@ -126,10 +126,10 @@ public class BookingUiTest extends BaseTestUI {
 
         WebElement checkin = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[1]")));
         checkin.click();
-        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/10/2028", Keys.ESCAPE);
+        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/09/2027", Keys.ESCAPE);
 
         WebElement checkout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[2]")));
-        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/10/2028", Keys.ESCAPE);
+        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/09/2027", Keys.ESCAPE);
 
 
         driver.findElement(By.xpath("//button[text()='Check Availability']")).click();
@@ -152,10 +152,10 @@ public class BookingUiTest extends BaseTestUI {
 
         WebElement checkin = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[1]")));
         checkin.click();
-        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/10/2028", Keys.ESCAPE);
+        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/10/2027", Keys.ESCAPE);
 
         WebElement checkout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[2]")));
-        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "05/10/2028", Keys.ESCAPE);
+        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "05/10/2027", Keys.ESCAPE);
 
 
         driver.findElement(By.xpath("//button[text()='Check Availability']")).click();
@@ -178,10 +178,10 @@ public class BookingUiTest extends BaseTestUI {
 
         WebElement checkin = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[1]")));
         checkin.click();
-        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/10/2028", Keys.ESCAPE);
+        checkin.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "10/09/2027", Keys.ESCAPE);
 
         WebElement checkout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='react-datepicker__input-container']/input)[2]")));
-        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/10/2028", Keys.ESCAPE);
+        checkout.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE, "15/09/2027", Keys.ESCAPE);
 
 
         driver.findElement(By.xpath("//button[text()='Check Availability']")).click();
