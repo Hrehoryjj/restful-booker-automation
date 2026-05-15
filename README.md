@@ -1,55 +1,56 @@
-# Restful-Booker Automation Framework
+# Java E2E Automation Framework (UI + API)
 
-This repository contains a comprehensive test automation framework for API and UI levels of the Restful Booker Platform (https://automationintesting.online).
+A robust test automation framework built from scratch to validate end-to-end user workflows and API consistency for the RESTful Booker platform. This project demonstrates a multi-layered automation approach combining comprehensive API testing with robust UI verification using Java and the Selenium ecosystem.
 
-## Tech Stack
+## Features
 
-- Java 17 (JDK)
-- Maven (Dependency Management)
-- RestAssured (API Testing)
-- Selenium WebDriver (UI Testing)
-- TestNG (Test Runner)
-- Allure Report (Reporting Tool)
-- WebDriverManager (Automatic driver management)
+- End-to-End API and UI test execution
+- Page Object Model (POM) architecture
+- Explicit API verification using REST Assured
+- Structured assertions via TestNG
+- Automated project building and dependency management via Maven
+- Detailed test execution logs and reporting integration
 
 ## Project Structure
 
-- src/main/java — Page Object models (UI) and Base API Client.
-- src/test/java — Test suites (API, UI, and Hybrid E2E).
-- docs/ — Detailed test cases and documentation.
-- testng.xml — Configuration for running test suites.
-
-## Coverage and Features
-
-### API Testing
-Full CRUD lifecycle (Create, Get, Update, Delete) for bookings, including negative scenarios with invalid payloads and schema validation.
-
-### UI Testing
-Testing complex React components like Datepickers (calendar), contact forms, field validation, and success message verification.
-
-### Hybrid E2E Scenario
-A cross-layer test that creates a booking via the UI and immediately verifies its existence in the database via an API request.
-
-### Resilience
-Implementation of Explicit Waits and JavaScript executors to handle dynamic web elements.
-
-## Getting Started
-
-### Prerequisites
-Ensure you have Java 17 and Maven installed.
-
-### Run All Tests
-```bash
-mvn clean test
+```
+/src/main/java
+/pages          - UI page classes utilizing Selenium WebDriver
+/api            - API payload configurations and client setups
+/src/test/java
+/tests          - Test suites and assertions partitioned by layer
+/pom.xml          - Project object model for dependency management
 ```
 
-## Documentation
+## Running Tests
 
-Detailed test case descriptions are available here:
+Install dependencies and build the project:  
+``` bash
+mvn clean install
+```
 
-- API Test Cases
-- UI Test Cases
-- E2E and Test Plan
+Run all automated test suites:  
+``` bash
+mvn test
+```
 
-### Author
-Hryhorii — QA Automation Engineer
+## Project Purpose
+
+This project was built as part of my QA Automation path to practice and master:
+- Java object-oriented programming (OOP) principles in test engineering
+- Multi-layered synchronization (independent API validation & UI flows)
+- Component separation and low-maintenance code design via Page Object Model
+- Industry-standard build lifecycle management using Maven
+
+## Tech Stack
+
+- Java 17
+- Selenium WebDriver 4
+- REST Assured
+- TestNG
+- Maven
+
+## Author
+
+Hryhorii Markevych  
+QA Automation Engineer
